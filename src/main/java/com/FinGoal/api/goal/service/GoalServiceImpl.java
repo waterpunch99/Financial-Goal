@@ -15,7 +15,7 @@ import org.springframework.stereotype.Service;
 public class GoalServiceImpl implements GoalService{
     private final GoalRepository goalRepository;
     @Override
-    public Long CreateGoal(GoalRequestDto goalRequestDto) {
+    public Long createGoal(GoalRequestDto goalRequestDto) {
         Goal goal = goalRequestDto.toEntity();
         Goal saved = goalRepository.save(goal);
         return saved.getId();
