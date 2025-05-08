@@ -6,9 +6,13 @@ import com.FinGoal.api.goal.dto.GoalResponseDto;
 
 public interface GoalService {
     //목표추가
-    public GoalResponseDto addGoal(GoalRequestDto goalRequestDto);
+    public Long CreateGoal(GoalRequestDto goalRequestDto);
     //목표 수정
-    public void updateGoal();
+    public void updateGoal(Long id, GoalRequestDto dto);
+    //목표 상세 조회
+    public GoalResponseDto getGoal(Long id);
+    //금액 입력
+    public void addAmount(Long id, Long amount);
 
 
 

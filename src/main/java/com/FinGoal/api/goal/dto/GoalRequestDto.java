@@ -1,10 +1,11 @@
 package com.FinGoal.api.goal.dto;
 
 import com.FinGoal.api.goal.domain.Goal;
+import lombok.Getter;
 
 import java.time.LocalDate;
 
-
+@Getter
 public class GoalRequestDto {
     private String title;
     private Long targetAmount;
