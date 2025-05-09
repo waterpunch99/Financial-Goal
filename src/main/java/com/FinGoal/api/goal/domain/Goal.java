@@ -19,6 +19,7 @@ public class Goal {
     private Long currentAmount = 0L;
     private LocalDate startDate;
     private LocalDate deadLine;
+    private int progress;
 
 
 
