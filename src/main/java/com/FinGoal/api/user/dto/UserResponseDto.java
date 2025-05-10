@@ -5,7 +5,7 @@ import lombok.Builder;
 
 @Builder
 public class UserResponseDto {
-    private String id;
+    private Long id;
     private String username;
 
     public static UserResponseDto fromEntity(User user){

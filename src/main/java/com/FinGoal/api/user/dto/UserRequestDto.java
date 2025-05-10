@@ -4,9 +4,9 @@ import com.FinGoal.api.user.domain.User;
 import lombok.Getter;
 
 @Getter
-public class UserRequsetDto {
+public class UserRequestDto {
 
-    private String id;
+    private Long id;
     private String pw;
     private String username;
 

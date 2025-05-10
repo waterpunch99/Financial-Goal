@@ -16,11 +16,11 @@ import java.time.LocalDateTime;
 public class User {
 
     @Id
-    private String id;
+    private Long id;
     private String pw;
     private String username;
     @Builder
-    public User(String id, String pw, String username){
+    public User(Long id, String pw, String username){
         this.id = id;
         this.pw = pw;
         this.username = username;
