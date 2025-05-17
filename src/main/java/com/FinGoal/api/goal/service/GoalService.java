@@ -6,7 +6,7 @@ import com.FinGoal.api.goal.dto.GoalResponseDto;
 
 public interface GoalService {
     //목표추가
-    public Long createGoal(GoalRequestDto goalRequestDto);
+    public Long createGoal(GoalRequestDto goalRequestDto, Long userId);
     //목표 수정
     public void updateGoal(Long id, GoalRequestDto dto);
     //목표 상세 조회

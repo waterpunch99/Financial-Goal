@@ -1,6 +1,7 @@
 package com.FinGoal.api.goal.dto;
 
 import com.FinGoal.api.goal.domain.Goal;
+import com.FinGoal.api.user.domain.User;
 import lombok.Getter;
 
 import java.time.LocalDate;
@@ -11,13 +12,15 @@ public class GoalRequestDto {
     private Long targetAmount;
     private LocalDate startDate;
     private LocalDate deadLine;
+    private Long userId;
 
-    public Goal toEntity(){
+    public Goal toEntity(User user){
         return Goal.builder()
                 .title(this.title)
                 .targetAmount(this.targetAmount)
                 .startDate(this.startDate)
                 .deadLine(this.deadLine)
+                .user(user)
                 .build();
     }
 }

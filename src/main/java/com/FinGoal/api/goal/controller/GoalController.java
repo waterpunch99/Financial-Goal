@@ -17,8 +17,8 @@ public class GoalController {
     private final GoalService goalService;
 
     @PostMapping
-    public ResponseEntity<Long> createGoal(@RequestBody GoalRequestDto goalRequestDto){
-        Long goalId = goalService.createGoal(goalRequestDto);
+    public ResponseEntity<Long> createGoal(@RequestBody GoalRequestDto goalRequestDto, @RequestParam Long userId){
+        Long goalId = goalService.createGoal(goalRequestDto, userId);
         return ResponseEntity.status(HttpStatus.CREATED).body(goalId);
     }
 

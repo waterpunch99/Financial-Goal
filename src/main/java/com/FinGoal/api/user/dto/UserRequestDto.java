@@ -7,6 +7,7 @@ import lombok.Getter;
 public class UserRequestDto {
 
     private Long id;
+    private String loginId;
     private String pw;
     private String username;
 
@@ -15,6 +16,7 @@ public class UserRequestDto {
                 .id(this.id)
                 .pw(this.pw)
                 .username(this.username)
+                .loginId(this.loginId)
                 .build();
     }
 }

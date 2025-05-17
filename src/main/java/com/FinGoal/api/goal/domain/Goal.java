@@ -1,8 +1,8 @@
 package com.FinGoal.api.goal.domain;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import com.FinGoal.api.user.domain.User;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDate;
@@ -13,14 +13,17 @@ import java.time.LocalDate;
 @Entity
 public class Goal {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String title;
     private Long targetAmount;
     private Long currentAmount = 0L;
     private LocalDate startDate;
     private LocalDate deadLine;
-    private int progress;
 
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 
 
     public void addAmount(Long amount) {
