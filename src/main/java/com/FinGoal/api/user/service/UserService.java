@@ -5,6 +5,7 @@ import com.FinGoal.api.user.dto.UserResponseDto;
 
 public interface UserService {
     public Long createUser(UserRequestDto dto);
-    public UserResponseDto login(Long id, String pw);
+    public boolean login(String loginId, String pw);
+    public void deleteUser(Long id, String pw);
 
 }

@@ -11,15 +11,21 @@ import org.springframework.stereotype.Service;
 public class UserServiceImpl implements UserService{
     private final UserRepository userRepository;
     @Override
-    public Long createUser(UserRequestDto dto) {
-        User user = dto.toEntity();
+    public Long createUser(UserRequestDto userRequestDto) {
+        User user = userRequestDto.toEntity();
         User saved = userRepository.save(user);
         return saved.getId();
     }
 
     @Override
-    public UserResponseDto login(Long id, String pw) {
+    public boolean login(String loginId, String pw) {
+    return userRepository.findByLoginId(loginId)
+            .map(u -> u.checkPassword(pw)).orElse(false);
 
-        return null;
+    }
+
+    @Override
+    public void deleteUser(Long id, String pw) {
+
     }
 }
