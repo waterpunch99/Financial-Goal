@@ -17,6 +17,8 @@ public class Goal {
     private Long id;
     private String title;
     private Long targetAmount;
+    @Builder.Default
+    @Column(nullable = false)
     private Long currentAmount = 0L;
     private LocalDate startDate;
     private LocalDate deadLine;
@@ -24,6 +26,12 @@ public class Goal {
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
+
+
+
+    public double ProgressRate() {
+        return (double) currentAmount / targetAmount * 100;
+    }
 
 
     public void addAmount(Long amount) {

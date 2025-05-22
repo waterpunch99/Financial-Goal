@@ -12,15 +12,16 @@ import java.util.List;
 @NoArgsConstructor
 @Getter
 @Entity
+@Table(name = "member")
 public class User {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String loginId;
     private String pw;
     private String username;
-    @OneToMany
-    @JoinColumn(name = "goal_id")
+    @OneToMany(mappedBy = "user")
     private List<Goal> goal = new ArrayList<>();
 
     public boolean checkPassword(String pw) {

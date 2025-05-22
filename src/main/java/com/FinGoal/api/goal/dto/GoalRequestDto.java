@@ -12,7 +12,7 @@ public class GoalRequestDto {
     private Long targetAmount;
     private LocalDate startDate;
     private LocalDate deadLine;
-    private Long userId;
+
 
     public Goal toEntity(User user){
         return Goal.builder()

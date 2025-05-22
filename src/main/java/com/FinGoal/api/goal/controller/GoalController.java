@@ -22,13 +22,13 @@ public class GoalController {
         return ResponseEntity.status(HttpStatus.CREATED).body(goalId);
     }
 
-    @PutMapping
+    @PutMapping("/{id}")
     public void updateGoal(@PathVariable Long id, @RequestBody GoalRequestDto dto){
         goalService.updateGoal(id, dto);
 
     }
 
-    @GetMapping
+    @GetMapping("/{id}")
     public ResponseEntity<GoalResponseDto> getGoal(@PathVariable Long id){
         GoalResponseDto dto = goalService.getGoal(id);
         return ResponseEntity.ok(dto);

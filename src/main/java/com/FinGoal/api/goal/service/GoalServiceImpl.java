@@ -19,7 +19,7 @@ public class GoalServiceImpl implements GoalService{
     private final UserRepository userRepository;
     @Override
     public Long createGoal(GoalRequestDto goalRequestDto, Long userId) {
-        User user = userRepository.findById(String.valueOf(userId))
+        User user = userRepository.findById(userId)
                 .orElseThrow(() -> new EntityNotFoundException("사용자 없음"));
 
         Goal goal = goalRequestDto.toEntity(user);
