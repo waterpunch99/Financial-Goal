@@ -2,6 +2,7 @@ package com.FinGoal.api.goal.domain;
 
 
 import com.FinGoal.api.user.domain.User;
+import com.FinGoal.common.entity.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -11,7 +12,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @Getter
 @Entity
-public class Goal {
+public class Goal extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

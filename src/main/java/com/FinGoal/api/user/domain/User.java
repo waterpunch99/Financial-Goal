@@ -1,6 +1,7 @@
 package com.FinGoal.api.user.domain;
 
 import com.FinGoal.api.goal.domain.Goal;
+import com.FinGoal.common.entity.BaseEntity;
 import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.Getter;
@@ -13,7 +14,7 @@ import java.util.List;
 @Getter
 @Entity
 @Table(name = "member")
-public class User {
+public class User extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
