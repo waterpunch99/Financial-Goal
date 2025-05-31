@@ -4,6 +4,7 @@ package com.FinGoal.api.goal.controller;
 import com.FinGoal.api.goal.dto.GoalRequestDto;
 import com.FinGoal.api.goal.dto.GoalResponseDto;
 import com.FinGoal.api.goal.service.GoalService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,13 +18,13 @@ public class GoalController {
     private final GoalService goalService;
 
     @PostMapping
-    public ResponseEntity<Long> createGoal(@RequestBody GoalRequestDto goalRequestDto, @RequestParam Long userId){
+    public ResponseEntity<Long> createGoal(@Valid @RequestBody GoalRequestDto goalRequestDto, @RequestParam Long userId){
         Long goalId = goalService.createGoal(goalRequestDto, userId);
         return ResponseEntity.status(HttpStatus.CREATED).body(goalId);
     }
 
     @PutMapping("/{id}")
-    public void updateGoal(@PathVariable Long id, @RequestBody GoalRequestDto dto){
+    public void updateGoal(@Valid @PathVariable Long id, @RequestBody GoalRequestDto dto){
         goalService.updateGoal(id, dto);
 
     }
